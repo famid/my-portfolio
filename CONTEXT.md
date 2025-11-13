@@ -1,9 +1,9 @@
 # Portfolio Application Context & Reference Guide
 
-**Last Updated:** 2025-11-12 (Fully Customized)
+**Last Updated:** 2025-11-13 (Experimental Branch - Enhanced Features)
 **Owner:** Ahsanul Hoque Famid
 **Original Template:** Ismailium (boularbahsmail on GitHub)
-**Status:** ✅ Production Ready
+**Status:** ✅ Enhanced with Blog Reading & Improved UI
 
 ---
 
@@ -57,7 +57,7 @@ Software Engineer portfolio displaying:
 ## Tech Stack
 
 ### Core Framework
-- **Next.js:** 12.2.2 (React framework with SSR/SSG)
+- **Next.js:** 12.3.4 (React framework with SSR/SSG)
 - **React:** 18.2.0 (UI library)
 - **React DOM:** 18.2.0
 
@@ -106,7 +106,9 @@ Software-Developer-Portfolio/
 │       └── index.jsx       # ✅ Updated
 ├── pages/
 │   ├── _app.js
-│   ├── index.js            # ✅ Updated with new components
+│   ├── index.js            # ✅ Updated with new components & reordered
+│   ├── blog/               # ✅ NEW - Dynamic blog routes
+│   │   └── [id].js         # UUID-based blog post pages
 │   └── api/
 │       └── hello.js
 ├── public/
@@ -129,11 +131,18 @@ Software-Developer-Portfolio/
 
 ### 1. Navbar Component ✅
 **Path:** `components/Navbar/index.jsx`
-**Status:** Updated
+**Status:** Fully Updated (Experimental Branch)
 
 **Changes Made:**
-- ✅ Added Blog link to navigation
-- ✅ Links: Experiences, Projects, Blog, Contact
+- ✅ Added Skills link to navigation
+- ✅ Added Certifications link to navigation
+- ✅ Updated all links to use full paths (/#section) for cross-page navigation
+- ✅ Logo now links to home page (/)
+- ✅ Links: Experiences, Skills, Projects, Blog, Certifications, Contact
+
+**Navigation Works From:**
+- Home page (scroll to section)
+- Blog detail pages (navigate to home + scroll to section)
 
 ---
 
@@ -156,29 +165,54 @@ Software-Developer-Portfolio/
 
 ---
 
-### 3. Experiences Component ✅
+### 3. Experiences Component ✅ REDESIGNED
 **Path:** `components/Experiences/index.jsx`
 **Data:** `components/Experiences/data/data.js`
-**Status:** Fully Customized
+**Status:** Completely Redesigned (Experimental Branch)
+
+**Design:** Card-based layout with 2-column grid (1 column mobile)
+
+**New Features:**
+- ✅ Full date ranges (e.g., "January 2025 - Present")
+- ✅ Location information for each position
+- ✅ Bullet-point achievements (4 per position)
+- ✅ Technology stack badges for each role
+- ✅ Bordered badge design with hover effects
+- ✅ Visual separator between content and tech tags
+- ✅ Flexbox layout ensuring aligned tech tags across cards
+- ✅ Larger, more expansive cards (2 columns vs previous 3)
+- ✅ Better visual hierarchy
+
+**Data Structure:**
+- `start_date` & `end_date`: Full date ranges
+- `location`: City, Country
+- `description`: Array of bullet points (not paragraph)
+- `technologies`: Array of tech stack used
 
 **Real Data (4 positions):**
-1. **Bit Byte Technology** - Software Engineer (2025-Present)
-   - Anzaar Lifestyle optimization (2min→1sec)
-   - ExportBangladesh.org (World Bank project)
-   - SSG E-shop backend
+1. **Bit Byte Technology** - Software Engineer (Jan 2025 - Present)
+   - Optimized campaign execution (2min→1sec)
+   - World Bank EC4J project backend
+   - Microservices with RabbitMQ & Redis
+   - Tech: NestJS, FastAPI, PostgreSQL, MongoDB, Redis, RabbitMQ, AWS
 
-2. **Relaxy** - Junior Software Engineer (2023-2025)
+2. **Relaxy** - Junior Software Engineer (Aug 2023 - Dec 2024)
    - 120,000+ users platform
-   - Migrated 25,000+ users
+   - Migrated 25,000+ users (Firestore→MongoDB)
    - 30% cost reduction
+   - Tech: NestJS, MongoDB, Firebase, Docker, Payment Gateways, Microservices
 
-3. **Ontik Technology** - Junior Software Developer (2023)
-   - Laravel optimization
-   - Daraz-WHM sync
+3. **Ontik Technology** - Junior Software Developer (Jan 2023 - Jul 2023)
+   - Laravel query optimization
+   - Daraz-WHM real-time sync
+   - N+1 query resolution (60% load reduction)
+   - Tech: Laravel, PHP, MySQL, Git, Cron Jobs, API Integration
 
-4. **Bugfix IT BD** - Junior Software Developer (2021-2022)
-   - RESTful APIs
-   - Database concurrency
+4. **Bugfix IT BD** - Junior Software Developer (Jun 2021 - Dec 2022)
+   - RESTful APIs development
+   - Database transactions & locking
+   - 10,000+ daily transactions
+   - Tech: Laravel, PHP, MySQL, Python, RESTful APIs, Database Optimization
 
 ---
 
@@ -205,31 +239,57 @@ Software-Developer-Portfolio/
 
 ---
 
-### 5. Blog Component ✅ NEW
+### 5. Blog Component ✅ ENHANCED
 **Path:** `components/Blog/index.jsx`
 **Data:** `components/Blog/data/data.js`
-**Status:** Created with Placeholder Posts
+**Detail Page:** `pages/blog/[id].js`
+**Status:** Fully Functional with Reading Feature
 
-**3 Placeholder Posts:**
+**3 Technical Blog Posts:**
 1. "Optimizing Campaign Execution: From 2 Minutes to 1 Second"
 2. "Migrating 25,000+ Users from Firestore to MongoDB"
 3. "Building Scalable Payment Integration with NestJS"
 
-**Note:** Links currently go to `#blog-placeholder`. Update with real blog URLs later.
+**Features:**
+- ✅ UUID-based routing (e.g., `/blog/a7f3b2c1-4d5e-6789-0abc-def123456789`)
+- ✅ Full blog content with structured data (paragraphs, headings, code blocks, lists)
+- ✅ Static Site Generation (SSG) for optimal performance
+- ✅ Professional reading layout with syntax highlighting
+- ✅ SEO-friendly with meta tags
+- ✅ Shareable URLs for LinkedIn/Twitter
+- ✅ Back navigation to home page
+- ✅ Responsive design matching portfolio theme
+
+**Blog Detail Page:**
+- Category badges
+- Publication date and read time
+- Author byline
+- Proper typography for readability
+- Code blocks with sky-blue syntax highlighting
+- Structured content rendering (headings, paragraphs, lists, code)
 
 ---
 
-### 6. Skills Component ✅ NEW
+### 6. Skills Component ✅ REDESIGNED
 **Path:** `components/Skills/index.jsx`
-**Status:** Created with Real Tech Stack
+**Status:** Redesigned with Horizontal Categorized List Layout (Experimental Branch)
+
+**Design:**
+- ✅ Horizontal categorized list layout (replaced card grid)
+- ✅ Category titles aligned right (220px fixed width)
+- ✅ Skills displayed as inline rounded badges
+- ✅ Subtle border dividers between categories
+- ✅ Hover effects on individual skill tags (brighten + scale)
+- ✅ Fully responsive (stacks on mobile)
+- ✅ Clean, modern, professional appearance
 
 **Categories:**
 - **Languages:** TypeScript, JavaScript, Python, PHP, SQL
 - **Backend Frameworks:** NestJS, Express.js, FastAPI, Django, Laravel, Node.js
 - **Databases:** PostgreSQL, MongoDB, MySQL, Redis
-- **Message Queues:** RabbitMQ, BullMQ, Event-Driven Architecture
-- **Cloud & DevOps:** AWS, Docker, Nginx, GitHub Actions
-- **Architecture:** Microservices, Serverless, RESTful APIs, Design Patterns
+- **Message Queues & Async:** RabbitMQ, BullMQ (Redis), Event-Driven Architecture
+- **Cloud & DevOps:** AWS (Lambda, S3, EC2, SQS, CloudWatch), Docker, Nginx, GitHub Actions (CI/CD)
+- **Architecture & Design:** Microservices, Serverless, RESTful APIs, API Gateway, Design Patterns
 
 ---
 
@@ -335,21 +395,29 @@ Contains 6 real projects with live URLs
 
 ### Blog Data
 **File:** `components/Blog/data/data.js`
-**Status:** ⚠️ Placeholder Posts
+**Status:** ✅ Full Content Ready
 
-Contains 3 placeholder posts. Update with real blog posts when available.
+Contains 3 complete technical blog posts with:
+- UUID-based IDs for routing
+- Full article content (structured data)
+- Code examples (TypeScript, SQL)
+- Real technical insights from actual projects
+- 8-12 minute read times
 
 ---
 
 ## Styling & Theme Guide
 
-### Color Scheme
+### Color Scheme (Updated - Experimental Branch)
 ```css
 Background:     #11162b  (Dark navy blue)
-Accent:         teal-500 (Tailwind - #14b8a6)
+Accent:         sky-500  (Tailwind - #0ea5e9) ← Changed from teal-500
 Text Primary:   white
 Text Secondary: gray-400, gray-300
-Card BG:        cyan-900, cyan-800
+Card BG:        sky-900, sky-800 ← Changed from cyan-900, cyan-800
+Code BG:        sky-950 (for code blocks in blog)
+Border:         sky-800 (dividers, borders)
+Hover:          sky-400 (interactive elements)
 ```
 
 ### Typography
@@ -360,6 +428,45 @@ Card BG:        cyan-900, cyan-800
 - `sm:` 640px+
 - `md:` 768px+
 - `lg:` 1024px+
+
+---
+
+## Experimental Branch Features (New in 2025-11-13)
+
+### Page Section Order (Reordered)
+**Previous Order:** Hero → Experiences → Works → Blog → Skills → Certifications → Contact
+**New Order:** Hero → Experiences → **Skills** → Works → Blog → Certifications → Contact
+
+**Rationale:** Skills section moved up to appear after Experiences for better portfolio flow:
+- "Who I am" (Hero)
+- "My experience" (Experiences)
+- "My technical skills" (Skills)
+- "My projects" (Works)
+- "My articles" (Blog)
+- "My credentials" (Certifications)
+- "Contact me" (Contact)
+
+### Blog Reading Feature
+- **Implementation:** UUID-based dynamic routes (`/blog/[id]`)
+- **Technology:** Next.js Static Site Generation (SSG)
+- **Content:** Full technical articles with code examples, headings, lists
+- **URLs:** Each blog post has shareable URL (SEO-friendly)
+- **Design:** Professional reading layout with syntax highlighting
+
+### Skills Section Redesign
+- **Previous:** 3-column grid of cards
+- **New:** Horizontal categorized list layout
+- **Improvement:** Cleaner, more scannable, professional appearance
+
+### Color Scheme Update
+- **Previous:** Teal/Cyan (#14b8a6)
+- **New:** Sky Blue (#0ea5e9)
+- **Applied:** Consistently across all components
+
+### Navigation Enhancement
+- **Added:** Skills and Certifications to navbar
+- **Fixed:** Cross-page navigation (works from blog detail pages)
+- **Total Links:** 6 (Experiences, Skills, Projects, Blog, Certifications, Contact)
 
 ---
 
@@ -448,25 +555,26 @@ vercel
 
 ## File Paths Quick Reference
 
-### Components (All Updated)
+### Components (All Updated - Experimental Branch)
 ```
-components/Navbar/index.jsx          # ✅ Added Blog link
+components/Navbar/index.jsx          # ✅ Added Skills & Certifications, cross-page navigation
 components/Hero/index.jsx            # ✅ Full rewrite
 components/Experiences/index.jsx
 components/Experiences/data/data.js  # ✅ Real data
 components/Works/index.jsx           # ✅ Added link support
 components/Works/data/data.js        # ✅ Real projects
-components/Blog/index.jsx            # ✅ NEW
-components/Blog/data/data.js         # ✅ NEW (placeholders)
-components/Skills/index.jsx          # ✅ NEW
-components/Certifications/index.jsx  # ✅ NEW
+components/Blog/index.jsx            # ✅ Links to blog detail pages
+components/Blog/data/data.js         # ✅ Full content with UUIDs
+components/Skills/index.jsx          # ✅ Redesigned horizontal layout
+components/Certifications/index.jsx  # ✅ Real certifications
 components/Contact/index.jsx         # ✅ Updated
 components/Footer/index.jsx          # ✅ Updated
 ```
 
 ### Pages
 ```
-pages/index.js                       # ✅ Updated with new components
+pages/index.js                       # ✅ Reordered sections (Skills moved up)
+pages/blog/[id].js                   # ✅ NEW - Dynamic blog post pages
 pages/_app.js
 ```
 
@@ -514,4 +622,18 @@ tailwind.config.js
 
 ---
 
-**Portfolio is now production-ready! Just add project screenshots and you're good to go! 🚀**
+## Summary
+
+**Experimental Branch Status:**
+- ✅ Blog reading feature fully implemented with UUID routing
+- ✅ Skills section redesigned with horizontal layout
+- ✅ Complete navbar with all sections
+- ✅ Cross-page navigation working
+- ✅ Color scheme updated to sky blue
+- ✅ Section order optimized
+- ✅ Full blog content with code examples
+- ✅ All features tested and building successfully
+
+**Ready for:** Testing, merge to master, deployment to Vercel
+
+**Remaining:** Add project screenshots to `/public/projects/` 🚀

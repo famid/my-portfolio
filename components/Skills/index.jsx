@@ -34,18 +34,20 @@ const Skills = () => {
       <p className="text-sm text-sky-500 font-semibold mt-4 mb-8 leading-6">
         Polyglot developer with expertise across multiple languages, frameworks, and modern cloud technologies.
       </p>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="space-y-6">
         {skillCategories.map((category, index) => (
           <div
             key={index}
-            className="bg-sky-900 rounded-lg p-6 transition ease-in-out duration-150 hover:bg-sky-800"
+            className="flex flex-col gap-3 pb-6 border-b border-sky-800 last:border-b-0 sm:flex-row sm:gap-8 sm:items-start"
           >
-            <h3 className="text-xl text-white font-bold mb-4">{category.title}</h3>
-            <div className="flex flex-wrap gap-2">
+            <h3 className="text-xl text-sky-500 font-bold sm:w-[220px] sm:text-right sm:flex-shrink-0 sm:pt-1">
+              {category.title}
+            </h3>
+            <div className="flex flex-wrap gap-2 items-start">
               {category.skills.map((skill, skillIndex) => (
                 <span
                   key={skillIndex}
-                  className="bg-sky-500 text-white text-sm px-3 py-1 rounded-full font-medium"
+                  className="bg-sky-500 text-white text-sm px-3 py-1 rounded-full font-medium transition ease-in-out duration-150 hover:bg-sky-400 hover:scale-105 cursor-default"
                 >
                   {skill}
                 </span>

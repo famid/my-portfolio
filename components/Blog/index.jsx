@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 // Blog Data
 import posts from './data/data.js';
@@ -46,15 +47,12 @@ const Blog = () => {
                 </p>
               </div>
 
-              <button className="py-2 px-4 bg-white mt-6 text-black ease-in-out duration-150 border-2 border-white rounded-md hover:bg-gray-900 hover:border-gray-900 hover:text-white w-full">
-                <a
-                  href={post.link}
-                  className="flex justify-between items-center gap-1 font-semibold text-sm"
-                >
+              <Link href={`/blog/${post.id}`}>
+                <a className="py-2 px-4 bg-white mt-6 text-black ease-in-out duration-150 border-2 border-white rounded-md hover:bg-gray-900 hover:border-gray-900 hover:text-white w-full flex justify-between items-center gap-1 font-semibold text-sm cursor-pointer">
                   <span>Read More</span>
                   <HiOutlineArrowNarrowRight />
                 </a>
-              </button>
+              </Link>
             </div>
           ))
         ) : null}

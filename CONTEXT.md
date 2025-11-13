@@ -1,9 +1,9 @@
 # Portfolio Application Context & Reference Guide
 
-**Last Updated:** 2025-11-13 (Experimental Branch - Enhanced Features)
+**Last Updated:** 2025-11-13 (Main Branch - Production Ready)
 **Owner:** Ahsanul Hoque Famid
 **Original Template:** Ismailium (boularbahsmail on GitHub)
-**Status:** ✅ Enhanced with Blog Reading & Improved UI
+**Status:** ✅ Production Ready - Deployed to Vercel
 
 ---
 
@@ -131,7 +131,7 @@ Software-Developer-Portfolio/
 
 ### 1. Navbar Component ✅
 **Path:** `components/Navbar/index.jsx`
-**Status:** Fully Updated (Experimental Branch)
+**Status:** Fully Updated & Vercel Optimized (Main Branch)
 
 **Changes Made:**
 - ✅ Added Skills link to navigation
@@ -139,10 +139,17 @@ Software-Developer-Portfolio/
 - ✅ Updated all links to use full paths (/#section) for cross-page navigation
 - ✅ Logo now links to home page (/)
 - ✅ Links: Experiences, Skills, Projects, Blog, Certifications, Contact
+- ✅ **Vercel Fix:** All anchor tags wrapped with Next.js `<Link>` component
+- ✅ Resolved ESLint `@next/next/no-html-link-for-pages` errors
 
 **Navigation Works From:**
 - Home page (scroll to section)
 - Blog detail pages (navigate to home + scroll to section)
+
+**Technical Implementation:**
+- Uses Next.js `Link` component for all internal navigation
+- Maintains onClick handlers for mobile menu closure
+- Follows Next.js best practices for client-side navigation
 
 ---
 
@@ -470,6 +477,62 @@ Hover:          sky-400 (interactive elements)
 
 ---
 
+## Deployment & Production Ready
+
+### Branch Workflow
+1. **Experimental Branch:** All new features developed and tested
+2. **Merged to Main:** 2025-11-13 - Fast-forward merge completed
+3. **Pushed to Remote:** Successfully deployed to GitHub main branch
+
+### Vercel Deployment Fix (2025-11-13)
+
+**Issue Encountered:**
+ESLint build errors on Vercel deployment:
+```
+Error: Do not use an `<a>` element to navigate to `/`. Use `<Link />` from `next/link` instead.
+See: https://nextjs.org/docs/messages/no-html-link-for-pages
+```
+
+**Root Cause:**
+- Navbar component used plain `<a>` tags for internal navigation
+- Violated Next.js ESLint rule `@next/next/no-html-link-for-pages`
+- Build failed on Vercel even though dev server worked locally
+
+**Solution Implemented:**
+1. Imported `Link` component from `next/link`
+2. Wrapped all internal `<a>` tags with `<Link>` component
+3. Maintained all existing:
+   - CSS classes and styling
+   - onClick handlers for mobile menu
+   - title attributes
+   - Accessibility features
+
+**Code Example:**
+```jsx
+// Before (ESLint error)
+<a href="/#experiences" className="..." onClick={closeMenu}>
+    Experiences
+</a>
+
+// After (Fixed)
+<Link href="/#experiences">
+    <a className="..." onClick={closeMenu}>
+        Experiences
+    </a>
+</Link>
+```
+
+**Files Modified:**
+- `components/Navbar/index.jsx` - All 7 navigation links updated
+
+**Result:**
+- ✅ ESLint errors resolved
+- ✅ Build passes on Vercel
+- ✅ All navigation functionality preserved
+- ✅ Performance improved with Next.js Link prefetching
+
+---
+
 ## Next Steps
 
 ### Immediate Actions Needed:
@@ -624,16 +687,24 @@ tailwind.config.js
 
 ## Summary
 
-**Experimental Branch Status:**
+**Production Status (Main Branch):**
 - ✅ Blog reading feature fully implemented with UUID routing
 - ✅ Skills section redesigned with horizontal layout
-- ✅ Complete navbar with all sections
-- ✅ Cross-page navigation working
-- ✅ Color scheme updated to sky blue
-- ✅ Section order optimized
+- ✅ Complete navbar with all sections (6 navigation links)
+- ✅ Cross-page navigation working from all pages
+- ✅ Color scheme updated to sky blue (#0ea5e9)
+- ✅ Section order optimized for better portfolio flow
 - ✅ Full blog content with code examples
+- ✅ Experiences section redesigned with 2-column card layout
+- ✅ Vercel deployment fix applied (Next.js Link component)
+- ✅ All ESLint errors resolved
+- ✅ Merged experimental → main branch
+- ✅ Pushed to remote repository
+
+**Deployment Status:**
+- ✅ Code pushed to GitHub main branch
+- ✅ Vercel-ready (ESLint compliant)
 - ✅ All features tested and building successfully
+- ✅ Production ready
 
-**Ready for:** Testing, merge to master, deployment to Vercel
-
-**Remaining:** Add project screenshots to `/public/projects/` 🚀
+**Remaining (Optional):** Add project screenshots to `/public/projects/` 🚀

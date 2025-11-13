@@ -165,29 +165,54 @@ Software-Developer-Portfolio/
 
 ---
 
-### 3. Experiences Component ✅
+### 3. Experiences Component ✅ REDESIGNED
 **Path:** `components/Experiences/index.jsx`
 **Data:** `components/Experiences/data/data.js`
-**Status:** Fully Customized
+**Status:** Completely Redesigned (Experimental Branch)
+
+**Design:** Card-based layout with 2-column grid (1 column mobile)
+
+**New Features:**
+- ✅ Full date ranges (e.g., "January 2025 - Present")
+- ✅ Location information for each position
+- ✅ Bullet-point achievements (4 per position)
+- ✅ Technology stack badges for each role
+- ✅ Bordered badge design with hover effects
+- ✅ Visual separator between content and tech tags
+- ✅ Flexbox layout ensuring aligned tech tags across cards
+- ✅ Larger, more expansive cards (2 columns vs previous 3)
+- ✅ Better visual hierarchy
+
+**Data Structure:**
+- `start_date` & `end_date`: Full date ranges
+- `location`: City, Country
+- `description`: Array of bullet points (not paragraph)
+- `technologies`: Array of tech stack used
 
 **Real Data (4 positions):**
-1. **Bit Byte Technology** - Software Engineer (2025-Present)
-   - Anzaar Lifestyle optimization (2min→1sec)
-   - ExportBangladesh.org (World Bank project)
-   - SSG E-shop backend
+1. **Bit Byte Technology** - Software Engineer (Jan 2025 - Present)
+   - Optimized campaign execution (2min→1sec)
+   - World Bank EC4J project backend
+   - Microservices with RabbitMQ & Redis
+   - Tech: NestJS, FastAPI, PostgreSQL, MongoDB, Redis, RabbitMQ, AWS
 
-2. **Relaxy** - Junior Software Engineer (2023-2025)
+2. **Relaxy** - Junior Software Engineer (Aug 2023 - Dec 2024)
    - 120,000+ users platform
-   - Migrated 25,000+ users
+   - Migrated 25,000+ users (Firestore→MongoDB)
    - 30% cost reduction
+   - Tech: NestJS, MongoDB, Firebase, Docker, Payment Gateways, Microservices
 
-3. **Ontik Technology** - Junior Software Developer (2023)
-   - Laravel optimization
-   - Daraz-WHM sync
+3. **Ontik Technology** - Junior Software Developer (Jan 2023 - Jul 2023)
+   - Laravel query optimization
+   - Daraz-WHM real-time sync
+   - N+1 query resolution (60% load reduction)
+   - Tech: Laravel, PHP, MySQL, Git, Cron Jobs, API Integration
 
-4. **Bugfix IT BD** - Junior Software Developer (2021-2022)
-   - RESTful APIs
-   - Database concurrency
+4. **Bugfix IT BD** - Junior Software Developer (Jun 2021 - Dec 2022)
+   - RESTful APIs development
+   - Database transactions & locking
+   - 10,000+ daily transactions
+   - Tech: Laravel, PHP, MySQL, Python, RESTful APIs, Database Optimization
 
 ---
 

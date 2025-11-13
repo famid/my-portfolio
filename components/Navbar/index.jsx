@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import styles from "../../styles/Navbar.module.css";
 
 const Navbar = () => {
@@ -19,41 +20,55 @@ const Navbar = () => {
         <header className={`py-3 px-2 flex justify-between items-center flex-wrap lg:py-7 ${styles.header} ${menuOpen ? `${styles.open}` : ""}`}>
             <div className="z-50">
                 <h2 className="text-2xl text-white font-bold">
-                    <a href="/" title="Ahsanul Hoque Famid">Ahsanul Hoque Famid</a>
+                    <Link href="/">
+                        <a title="Ahsanul Hoque Famid">Ahsanul Hoque Famid</a>
+                    </Link>
                 </h2>
             </div>
             <nav>
                 <ul
                     className={`menu hidden absolute left-0 top-0 m-0 py-20 pt-16 px-4 bg-black z-40 w-full h-52 sm:w-unset sm:h-auto sm:bg-transparent sm:flex sm:py-0 sm:static sm:left-unset sm:top-unset ${styles.menu} ${menuOpen ? `${styles.open}` : ""}`}>
                     <li className="mb-4 mt-2 mx-0 sm:mb-0 sm:mt-0 sm:mx-3" title="Experiences">
-                        <a href="/#experiences" className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
-                            Experiences
-                        </a>
+                        <Link href="/#experiences">
+                            <a className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
+                                Experiences
+                            </a>
+                        </Link>
                     </li>
                     <li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Skills">
-                        <a href="/#skills" className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
-                            Skills
-                        </a>
+                        <Link href="/#skills">
+                            <a className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
+                                Skills
+                            </a>
+                        </Link>
                     </li>
                     <li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Projects">
-                        <a href="/#projects" className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
-                            Projects
-                        </a>
+                        <Link href="/#projects">
+                            <a className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
+                                Projects
+                            </a>
+                        </Link>
                     </li>
                     <li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Blog">
-                        <a href="/#blog" className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
-                            Blog
-                        </a>
+                        <Link href="/#blog">
+                            <a className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
+                                Blog
+                            </a>
+                        </Link>
                     </li>
                     <li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Certifications">
-                        <a href="/#certifications" className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
-                            Certifications
-                        </a>
+                        <Link href="/#certifications">
+                            <a className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
+                                Certifications
+                            </a>
+                        </Link>
                     </li>
                     <li className="mb-4 mx-0 sm:mb-0 sm:mx-3" title="Contact">
-                        <a href="/#contact" className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
-                            Contact
-                        </a>
+                        <Link href="/#contact">
+                            <a className="text-1xs text-white font-semibold ease-in-out duration-150 hover:text-sky-400" onClick={() => closeMenu()}>
+                                Contact
+                            </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
